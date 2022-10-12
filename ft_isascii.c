@@ -6,7 +6,14 @@
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:11:59 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/05 11:12:03 by acalmaz          ###   ########.fr       */
+/*   Updated: 2022/10/12 15:40:43 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int
+	ft_isascii(int c)
+{
+	return (c >= 0 && c < 128);
+}

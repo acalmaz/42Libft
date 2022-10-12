@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:08:20 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:26 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/12 15:54:49 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/12 15:56:11 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c += 32);
-	else
-		return (c);
+	unsigned int	i;
+
+	if (!s)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		++i;
+	}
 }

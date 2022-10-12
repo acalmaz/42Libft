@@ -6,7 +6,7 @@
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:10:35 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/05 12:28:04 by acalmaz          ###   ########.fr       */
+/*   Updated: 2022/10/12 15:40:44 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr;
+	size_t	i;
 
-	ptr = (unsigned char*)s;
-	while (n-- > 0)
+	if (!s)
+		return ;
+	i = 0;
+	while (i < n)
 	{
-		*(ptr++) = 0;
+		*(char*)(s + i) = 0;
+		i++;
 	}
 }

@@ -6,7 +6,14 @@
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:06:15 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/05 11:12:15 by acalmaz          ###   ########.fr       */
+/*   Updated: 2022/10/12 15:57:41 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+int
+	ft_isalnum(int c)
+{
+	return (ft_isdigit(c) || ft_isalpha(c));
+}

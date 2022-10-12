@@ -6,11 +6,9 @@
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 10:50:46 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/11 18:10:53 by acalmaz          ###   ########.fr       */
+/*   Updated: 2022/10/12 15:40:41 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_atoi(const char *str)
 {
