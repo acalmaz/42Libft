@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:29:11 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:35 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:11:39 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:10 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	tmp = ft_lstlast(*lst);
-	if (!tmp)
+	if (*lst == NULL)
+	{
 		*lst = new;
-	else
-		tmp->next = new;
+		return ;
+	}
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }

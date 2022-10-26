@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:55:06 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:56:10 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:14:37 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:04 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

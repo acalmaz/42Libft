@@ -5,22 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:31:41 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:32 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:13:52 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:07 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*ret;
+	t_list	*new;
 
-	ret = malloc(sizeof(t_list));
-	if (!ret)
-		return (0);
-	ret->content = content;
-	ret->next = 0;
-	return (ret);
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }

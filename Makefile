@@ -1,15 +1,33 @@
-SRC = $(shell find src -name "*.c")
-OBJS = $(SRC:.c=.o)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/17 23:36:46 by acalmaz           #+#    #+#              #
+#    Updated: 2022/10/26 02:17:51 by acalmaz          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
-FLAGS = -c -Wall -Werror -Wextra -I
+FLAG = -Wall -Wextra -Werror
+SRC = $(shell find . ! -name "ft_lst*.c" -name "ft_*.c")
+BONUS = $(shell find . -name "ft_lst*.c")
+
 all: $(NAME)
-$(NAME): $(OBJS)
-    ar rcs $(NAME) $(OBJS)
-.c.o:
-    gcc $(FLAGS) includes $< -o $@
+
+$(NAME):
+	gcc $(FLAG) -c $(SRC)
+	ar rc $(NAME) *.o
+bonus:
+	gcc $(FLAG) -c $(BONUS)
+	ar rc $(NAME) *.o
 clean:
-    rm -f src/*.o
+	/bin/rm -f  *.o
 fclean: clean
-    rm -f libft.a
+	rm -f $(NAME)
+
 re: fclean all
-.PHONY: clean fclean re all
+
+.PHONY: all bonus clean fclean re

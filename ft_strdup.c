@@ -5,23 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:08:02 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:28 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:15:22 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:01 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+static char	*ft_strcpy(char *dst, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
+}
+
+char	*ft_strdup(const char *s)
 {
 	char	*ret;
-	size_t	len;
 
-	len = ft_strlen(s1);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	ft_strlcpy(ret, s1, len + 1);
+	ret = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (ret)
+		ft_strcpy(ret, s);
 	return (ret);
 }

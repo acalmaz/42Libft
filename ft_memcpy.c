@@ -5,21 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:07:50 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:30 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:14:21 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:05 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	void	*ret;
+	size_t	i;
 
 	if (!dst && !src)
 		return (0);
-	ret = dst;
-	while (n--)
-		*(char *)dst++ = *(char *)src++;
-	return (ret);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dst);
 }

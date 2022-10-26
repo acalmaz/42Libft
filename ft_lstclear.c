@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:30:01 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:34 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:13:18 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:09 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (lst && *lst)
+	t_list	*ptr;
+
+	if (lst == NULL || del == NULL)
+		return ;
+	while (*lst != NULL)
 	{
-		ft_lstclear(&(*lst)->next, del);
+		ptr = (*lst)->next;
 		ft_lstdelone(*lst, del);
-		*lst = 0;
+		*lst = ptr;
 	}
+	*lst = NULL;
 }

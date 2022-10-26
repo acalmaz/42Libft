@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 11:11:59 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:43 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/25 11:21:27 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/25 11:21:28 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int
-	ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	return (c >= 0 && c < 128);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

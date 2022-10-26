@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:30:44 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:33 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/25 11:22:14 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/25 11:26:23 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (f == NULL)
+		return ;
 	while (lst)
 	{
 		f(lst->content);

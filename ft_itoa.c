@@ -5,36 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 14:25:04 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:39 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/25 20:06:57 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/25 20:06:58 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+
+static int	ft_numlen(int num)
+{
+	int	i;
+
+	if (num == 0)
+		return (1);
+	i = 0;
+	while (num > 0 || num < 0)
+	{
+		num /= 10;
+		i++;
+	}
+	return (i);
+}
 
 char	*ft_itoa(int n)
 {
-	int			len;
-	char		*ret;
-	const char	*digits = "0123456789";
+	int		len;
+	char	*str;
+	long	nbr;
 
-	len = ft_numlen(n, 10);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	ret[len] = 0;
-	if (n == 0)
-		ret[0] = '0';
+	nbr = n;
+	len = ft_numlen(nbr);
 	if (n < 0)
-		ret[0] = '-';
-	while (n)
 	{
-		if (n > 0)
-			ret[--len] = digits[n % 10];
-		else
-			ret[--len] = digits[n % 10 * -1];
-		n /= 10;
+		len++;
+		nbr = -nbr;
 	}
-	return (ret);
+	str = malloc(sizeof(char) * len + 1);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
+	while (nbr > 0)
+	{
+		str[--len] = nbr % 10 + 48;
+		nbr /= 10;
+	}
+	if (n < 0)
+		str[0] = '-';
+	if (n == 0)
+		str[0] = '0';
+	return (str);
 }

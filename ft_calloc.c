@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 11:11:55 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:44 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/25 11:20:55 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/25 11:20:56 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ret;
+	size_t	tot_size;
+	void	*dst;
 
-	ret = malloc(size * count);
-	if (!ret)
+	tot_size = size * count;
+	dst = malloc(tot_size);
+	if (!dst)
 		return (0);
-	ft_bzero(ret, size * count);
-	return (ret);
+	ft_memset(dst, 0, tot_size);
+	return (dst);
 }

@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:08:17 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:25 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:16:50 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:17:56 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ret;
+	char	*start;
 
-	ret = 0;
+	start = (char *)s;
 	while (*s)
+		s++;
+	while (s >= start)
 	{
-		if (*s == (unsigned char)c)
-			ret = (char *)s;
-		++s;
+		if (*((char *)s) == (char)c)
+			return ((char *)s);
+		s--;
 	}
-	if (!c)
-		ret = ((char *)s);
-	return (ret);
+	return (NULL);
 }

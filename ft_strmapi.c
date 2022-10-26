@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:54:06 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:56:12 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:16:32 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:17:57 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*ret;
-	size_t	len;
+	char			*str;
+	unsigned int	i;
 
-	if (!s1 || !s2)
+	str = ft_strdup(s);
+	if (!s || !f || !str)
 		return (0);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	ret = malloc(sizeof(char) * (len + 1));
-	if (!ret)
-		return (0);
-	ft_strlcpy(ret, s1, len + 1);
-	ft_strlcat(ret, s2, len + 1);
-	return (ret);
+	i = 0;
+	while (str[i])
+	{
+		str[i] = f(i, str[i]);
+		i++;
+	}
+	return (str);
 }

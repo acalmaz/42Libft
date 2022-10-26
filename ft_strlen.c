@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:08:10 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:42 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:16:26 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:17:58 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-size_t  strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    size_t i;
+	size_t	l;
 
-    i = 0;
-    while(s[i] != '\0')
-        i++;
-    return(i);
+	l = 0;
+	while (s[l] != 0)
+		l++;
+	return (l);
 }

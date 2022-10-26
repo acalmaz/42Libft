@@ -5,15 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:07:59 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:29 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:15:13 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:02 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != (unsigned char)c)
-		if (!*s++)
-			return (0);
-	return ((char *)s);
+	if (c >= 127)
+		return ((char *)s);
+	while (*s != '\0' && c != *s)
+		s++;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
 }

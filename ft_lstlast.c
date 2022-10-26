@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:31:04 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:32 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:13:40 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:08 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
+	while (lst)
+	{
+		if (!lst->next)
+			return (lst);
 		lst = lst->next;
-	return (lst);
+	}
+	return (NULL);
 }

@@ -5,25 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:08:05 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:27 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:15:55 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:17:59 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	ret;
+	size_t	c;
+	size_t	d;
 
-	i = 0;
-	while (*dst && i < dstsize)
+	if (dstsize <= ft_strlen(dst))
+		return (dstsize + ft_strlen(src));
+	c = ft_strlen(dst);
+	d = 0;
+	while (src[d] != '\0' && c + 1 < dstsize)
 	{
-		++dst;
-		++i;
+		dst[c] = src[d];
+		c++;
+		d++;
 	}
-	ret = ft_strlcpy(dst, src, dstsize - i);
-	return (ret + i);
+	dst[c] = '\0';
+	return (ft_strlen(dst) + ft_strlen(&src[d]));
 }

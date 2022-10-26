@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:07:38 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:40 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/25 11:21:40 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/25 11:21:41 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int
-	ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-	return (c >= '0' && c <= '9');
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

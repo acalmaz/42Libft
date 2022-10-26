@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 12:07:42 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:40 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/25 20:06:37 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/25 20:06:38 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int
-	ft_isprint(int c)
+int	ft_isprint(int c)
 {
-	return (c >= 32 && c <= 126);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }

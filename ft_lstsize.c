@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acalmaz <acalmaz@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 15:31:57 by acalmaz           #+#    #+#             */
-/*   Updated: 2022/10/12 15:40:31 by acalmaz          ###   ########.fr       */
+/*   Created: 2022/10/26 02:13:58 by acalmaz           #+#    #+#             */
+/*   Updated: 2022/10/26 02:18:06 by acalmaz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	ret;
+	size_t	count;
 
-	ret = 0;
-	while (lst && ++ret)
+	count = 0;
+	while (lst && ++count)
 		lst = lst->next;
-	return (ret);
+	return (count);
 }
